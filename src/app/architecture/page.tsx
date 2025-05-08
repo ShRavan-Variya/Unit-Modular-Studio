@@ -3,7 +3,7 @@ import TopNav from "@/components/TopNav";
 import {projects} from "@/constants/Theme";
 import ProjectItem from "@/components/ProjectItem";
 
-export default function Products() {
+export default function Architecture() {
   const filteredProjects = projects.filter((item) => {
     if (item.category !== "Architecture") {
       return false;
