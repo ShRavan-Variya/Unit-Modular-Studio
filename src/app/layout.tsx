@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

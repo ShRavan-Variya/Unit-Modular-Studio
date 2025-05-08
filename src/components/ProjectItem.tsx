@@ -1,12 +1,12 @@
 import React, {FC} from 'react';
-import Image from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 import Link from 'next/link';
 
 interface ProjectItemProps {
   title: string;
   subtitle: string;
-  mainImage: string;
-  previewImage: string;
+  mainImage: StaticImageData;
+  previewImage: StaticImageData;
   description: string;
 }
 
