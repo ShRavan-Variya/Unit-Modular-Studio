@@ -17,7 +17,7 @@ const TopNav: FC<TopNavProps> = (props) => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="mx-auto flex justify-between items-center px-6 py-4">
+      <div className="mx-auto flex items-center px-6 py-4">
         <Link href="/" className="flex items-center space-x-2 cursor-pointer">
           <div className="relative w-8 h-8">
             <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" priority />
@@ -27,7 +27,7 @@ const TopNav: FC<TopNavProps> = (props) => {
             <span className="text-gray-500">SPACES</span>
           </h1>
         </Link>
-        <nav className="flex space-x-10 text-gray-700 text-sm">
+        <nav className="absolute left-1/2 transform -translate-x-1/2 flex space-x-10 text-gray-700 text-sm">
           <Link href="/architecture" className={`${props.current === 'architecture' ? 'text-red-500' : 'hover:text-red-500'}`}>Architecture</Link>
           <div className="relative group">
             <div className={`${props.current === 'industrial' ? 'text-red-500' : 'hover:text-red-500'}`}><button onClick={() => setIsMenuOpen(!isMenuOpen)}>Industrial Design</button></div>
@@ -51,7 +51,7 @@ const TopNav: FC<TopNavProps> = (props) => {
           <Link href="/about" className={`${props.current === 'about' ? 'text-red-500' : 'hover:text-red-500'}`}>About Us</Link>
           <Link href="/contact" className={`${props.current === 'contact' ? 'text-red-500' : 'hover:text-red-500'}`}>Contact us</Link>
         </nav>
-        <div className='flex' />
+        {/* <div className='flex' /> */}
       </div>
     </header>
   );
