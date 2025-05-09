@@ -15,9 +15,10 @@ export default function Products() {
               title={item.title}
               subtitle={item.subtitle}
               mainImage={item.mainImage}
+              icon={item.icon}
               previewImage={item.previewImage}
               description={item.description}
-            />
+              />
           ))}
         </div>
       </div>

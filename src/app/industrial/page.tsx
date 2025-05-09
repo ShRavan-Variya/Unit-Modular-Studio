@@ -35,6 +35,7 @@ function IndustrialContent() {
               title={item.title}
               subtitle={item.subtitle}
               mainImage={item.mainImage}
+              icon={item.icon}
               previewImage={item.previewImage}
               description={item.description}
             />
@@ -50,7 +51,7 @@ function IndustrialContent() {
 export default function Industrial() {
   return (
     <div className="bg-white min-h-screen">
-      <TopNav current={"menu"} />
+      <TopNav current={"industrial"} />
       <Suspense fallback={<div className="text-center py-20">Loading...</div>}>
         <IndustrialContent />
       </Suspense>

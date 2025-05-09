@@ -31,7 +31,7 @@ export default function ContactUs() {
 
           <div className="flex items-center mt-10">
             <p className="font-bold text-red-500 text-sm">ADDRESS:</p>
-            <p className="text-gray-800 pl-2 text-sm">Plot No: 01, Arkose Industrial Premises, Sajgaon, Dheku, road, Aadoshi, Khalapur, Maharashtra 410203</p>
+            <p className="text-gray-800 pl-2 text-sm">1805, Kamdhenu 23 West, TTC MIDC, Turbhe, Navi Mumbai.</p>
           </div>
 
           <div className="flex items-center">
@@ -78,7 +78,7 @@ export default function ContactUs() {
 
           <div className="relative w-full h-[400px] overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1933920.286701835!2d73.3099711!3d18.7897706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be8072e85576535%3A0xe82f4b207081c33e!2sUnit%20Modular%20Studio!5e0!3m2!1sen!2sin!4v1746717253299!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.2616841277354!2d73.016858!3d19.0961726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c1ee942ebe55%3A0x85fc7d76975975c2!2sKAMDHENU%2023%20WEST!5e0!3m2!1sen!2sin!4v1746774857337!5m2!1sen!2sin"
               width="100%"
               height="100%"
               className="filter grayscale"
@@ -87,6 +87,17 @@ export default function ContactUs() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+
+
+            {/* <iframe
+              src=""
+              width="600"
+              height="450"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe> */}
           </div>
         </div>
 
