@@ -46,7 +46,7 @@ export default function ContactUs() {
 
           <div className="flex items-center">
             <p className="font-bold text-red-500 text-sm">PHONE:</p>
-            <p className="text-gray-800 pl-2 text-sm">09769203602</p>
+            <p className="text-gray-800 pl-2 text-sm"></p>
           </div>
 
           {/* Social Icons */}
