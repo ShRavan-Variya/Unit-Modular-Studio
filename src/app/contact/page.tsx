@@ -23,7 +23,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div className="bg-white min-h-screen flex flex-col pt-20 items-center">
+    <div className="bg-white min-h-screen flex flex-col pt-20 pb-20 items-center">
       <TopNav current={'contact'}/>
       {/* Breadcrumb */}
       <div className="w-full px-30 py-4 text-sm text-gray-500 mb-15">

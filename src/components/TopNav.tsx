@@ -152,7 +152,7 @@ const TopNav: FC<TopNavProps> = (props) => {
           <nav className="flex flex-col space-y-6 px-6 pt-24 text-gray-800 text-lg">
             {/* <Link href="/architecture" onClick={handleLinkClick}>Architecture</Link>  */}
             <div>
-              <button onClick={() => setIsMenuOpen1(!isMenuOpen1)} className="w-full text-left">Architecture</button>
+              <button className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"} w-full text-left`} onClick={() => setIsMenuOpen1(!isMenuOpen1)}>Architecture</button>
               {isMenuOpen1 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {["Residential", "Commercial", "Hospitality", "Recreational"].map((category) => (
@@ -164,7 +164,7 @@ const TopNav: FC<TopNavProps> = (props) => {
               )}
             </div>
             <div>
-              <button onClick={() => setIsMenuOpen2(!isMenuOpen2)} className="w-full text-left">Industrial Design</button>
+              <button className={`${props.current === "industrial" ? "text-red-500" : "hover:text-red-500"} w-full text-left`} onClick={() => setIsMenuOpen2(!isMenuOpen2)}>Industrial Design</button>
               {isMenuOpen2 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {["steel", "chemical", "pharma", "textile", "food"].map((category) => (
@@ -176,9 +176,9 @@ const TopNav: FC<TopNavProps> = (props) => {
               )}
             </div>
 
-            <Link href="/products" onClick={handleLinkClick}>Products</Link>
-            <Link href="/about" onClick={handleLinkClick}>About Us</Link>
-            <Link href="/contact" onClick={handleLinkClick}>Contact us</Link>
+            <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Products</Link>
+            <Link href="/about" className={`${props.current === "about" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>About Us</Link>
+            <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Contact us</Link>
           </nav>
         </div>
       )}
