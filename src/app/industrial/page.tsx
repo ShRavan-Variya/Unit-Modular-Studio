@@ -4,6 +4,7 @@ import TopNav from "@/components/TopNav";
 import {projects} from "@/constants/Theme";
 import {useSearchParams} from 'next/navigation';
 import ProjectItem from "@/components/ProjectItem";
+import Link from "next/link";
 
 function IndustrialContent() {
   const searchParams = useSearchParams();
@@ -20,16 +21,30 @@ function IndustrialContent() {
     }
     return true;
   });
-
+  
   return (
-    <div className="w-full mx-auto overflow-y-auto p-8 pt-25">
-      <h1 className="text-3xl font-bold mb-8 text-center text-gray-500">
-        {subCategory ? `Industrial - ${subCategory.charAt(0).toUpperCase() + subCategory.slice(1)}` : "Industrial Design Projects"}
-      </h1>
+    <div className="w-full mx-auto overflow-y-auto p-8 pt-20">
+      {/* Breadcrumb */}
+      <div className="w-full px-10 py-4 text-sm text-gray-500">
+        <nav className="flex space-x-2" aria-label="Breadcrumb">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span>&gt;</span>
+          {subCategory ? (
+            <Link href="/industrial" className="hover:underline">{mainCategory}</Link>
+          ): (
+            <span className="text-red-500 font-medium">{mainCategory}</span>
+          )}
+          {subCategory && (
+            <>
+              <span>&gt;</span>
+              <span className="text-red-500 font-medium">{subCategory}</span>
+            </>
+          )}
+        </nav>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-5">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((item, index) => (
+        {filteredProjects.length > 0 && filteredProjects.map((item, index) => (
             <ProjectItem
               key={index}
               title={item.title}
@@ -39,11 +54,12 @@ function IndustrialContent() {
               previewImage={item.previewImage}
               description={item.description}
             />
-          ))
-        ) : (
-          <p className="text-center text-gray-500">No projects found in this category.</p>
+          )
         )}
       </div>
+      {filteredProjects.length === 0 && (
+        <p className="w-full text-center text-gray-500">{`No projects found in ${subCategory ? subCategory : 'Architecture'}.`}</p>
+      )}
     </div>
   );
 }

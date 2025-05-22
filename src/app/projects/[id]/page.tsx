@@ -6,6 +6,7 @@ import {useParams} from 'next/navigation';
 import {notFound} from 'next/navigation';
 import TopNav from '@/components/TopNav';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -27,7 +28,7 @@ export default function ProjectDetailPage() {
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY !== 0) {
         e.preventDefault();
-        const scrollAmount = e.deltaY * 10;
+        const scrollAmount = e.deltaY * 3;
         container.scrollBy({
           left: scrollAmount,
           behavior: 'smooth',
