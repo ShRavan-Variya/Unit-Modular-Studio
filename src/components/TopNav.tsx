@@ -152,7 +152,7 @@ const TopNav: FC<TopNavProps> = (props) => {
           <nav className="flex flex-col space-y-6 px-6 pt-24 text-gray-800 text-lg">
             {/* <Link href="/architecture" onClick={handleLinkClick}>Architecture</Link>  */}
             <div>
-              <button onClick={() => setIsMenuOpen1(!isMenuOpen2)} className="w-full text-left">Architecture</button>
+              <button onClick={() => setIsMenuOpen1(!isMenuOpen1)} className="w-full text-left">Architecture</button>
               {isMenuOpen1 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {["Residential", "Commercial", "Hospitality", "Recreational"].map((category) => (
@@ -165,7 +165,7 @@ const TopNav: FC<TopNavProps> = (props) => {
             </div>
             <div>
               <button onClick={() => setIsMenuOpen2(!isMenuOpen2)} className="w-full text-left">Industrial Design</button>
-              {isMenuOpen1 && (
+              {isMenuOpen2 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {["steel", "chemical", "pharma", "textile", "food"].map((category) => (
                     <Link key={category} href={`/industrial?category=${category}`} className="text-[15px] font-medium text-gray-700 hover:text-red-500" onClick={handleLinkClick}>
