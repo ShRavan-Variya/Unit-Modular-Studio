@@ -43,7 +43,11 @@ const TopNav: FC<TopNavProps> = (props) => {
           {/* <Link href="/architecture" className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"}`}>Architecture</Link> */}
           <div className="relative group">
             <div className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"}`}>
-              <button onClick={() => setIsMenuOpen1(!isMenuOpen1)}>Architecture</button>
+              <button
+                onClick={() => {
+                  setIsMenuOpen1(!isMenuOpen1)
+                  setIsMenuOpen2(false)
+                }}>Architecture</button>
             </div>
             {isMenuOpen1 && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
@@ -59,7 +63,11 @@ const TopNav: FC<TopNavProps> = (props) => {
           </div>
           <div className="relative group">
             <div className={`${props.current === "industrial" ? "text-red-500" : "hover:text-red-500"}`}>
-              <button onClick={() => setIsMenuOpen2(!isMenuOpen2)}>Industrial Design</button>
+              <button
+                onClick={() => {
+                  setIsMenuOpen1(false)
+                  setIsMenuOpen2(!isMenuOpen2)
+                }}>Industrial Design</button>
             </div>
             {isMenuOpen2 && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
@@ -152,7 +160,12 @@ const TopNav: FC<TopNavProps> = (props) => {
           <nav className="flex flex-col space-y-6 px-6 pt-24 text-gray-800 text-lg">
             {/* <Link href="/architecture" onClick={handleLinkClick}>Architecture</Link>  */}
             <div>
-              <button className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"} w-full text-left`} onClick={() => setIsMenuOpen1(!isMenuOpen1)}>Architecture</button>
+              <button
+                className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
+                onClick={() => {
+                  setIsMenuOpen1(!isMenuOpen1)
+                  setIsMenuOpen2(false)
+                }}>Architecture</button>
               {isMenuOpen1 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {["Residential", "Commercial", "Hospitality", "Recreational"].map((category) => (
@@ -164,7 +177,12 @@ const TopNav: FC<TopNavProps> = (props) => {
               )}
             </div>
             <div>
-              <button className={`${props.current === "industrial" ? "text-red-500" : "hover:text-red-500"} w-full text-left`} onClick={() => setIsMenuOpen2(!isMenuOpen2)}>Industrial Design</button>
+              <button
+                className={`${props.current === "industrial" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
+                onClick={() => {
+                  setIsMenuOpen1(false)
+                  setIsMenuOpen2(!isMenuOpen2)
+                }}>Industrial Design</button>
               {isMenuOpen2 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {["steel", "chemical", "pharma", "textile", "food"].map((category) => (
