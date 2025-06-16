@@ -24,8 +24,8 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
               src={props.icon}
               alt="Small Hover Image"
               fill
-              style={{ objectFit: 'contain' }}
-              className="rounded-md"
+              style={{ objectFit: 'cover' }}
+              className=""
             />
           </div>
 

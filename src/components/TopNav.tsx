@@ -51,7 +51,7 @@ const TopNav: FC<TopNavProps> = (props) => {
             </div>
             {isMenuOpen1 && (
               <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
-                {["Residential", "Commercial", "Hospitality", "Recreational"].map(
+                {["Residential", "Re-Creational", "Institutional", "Hospitality", "Commercial"].map(
                   (category) => (
                     <Link key={category} href={`/architecture?category=${category}`} className="block px-4 py-1 text-gray-600 hover:bg-gray-100 hover:text-red-500" onClick={handleLinkClick} >
                       {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -108,30 +108,6 @@ const TopNav: FC<TopNavProps> = (props) => {
         </button>
       </div>
 
-      {/* Mobile Slide-Out Menu */}
-      {/* {mobileMenuOpen && (
-        <div className="lg:hidden fixed top-0 left-0 w-full h-screen bg-white/60 backdrop-blur-md z-50 transition-all duration-300 ease-in-out">
-          <nav className="flex flex-col space-y-6 px-6 pt-24 text-gray-800 text-lg">
-            <Link href="/architecture" onClick={handleLinkClick}>Architecture</Link>
-            <div>
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="w-full text-left text-gray-700">Industrial Design</button>
-              {isMenuOpen && (
-                <div className="ml-4 mt-2 flex flex-col space-y-1">
-                  {["steel", "chemical", "pharma", "textile", "food"].map((category) => (
-                    <Link key={category} href={`/industrial?category=${category}`} className="text-[15px] font-medium text-gray-700 hover:text-red-500" onClick={handleLinkClick}>
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            <Link href="/products" onClick={handleLinkClick}>Products</Link>
-            <Link href="/about" onClick={handleLinkClick}>About Us</Link>
-            <Link href="/contact" onClick={handleLinkClick}>Contact us</Link>
-          </nav>
-        </div>
-      )} */}
-
       {mobileMenuOpen && (
         <div className="lg:hidden fixed top-0 left-0 w-full h-screen bg-white/60 backdrop-blur-md z-50 transition-all duration-300 ease-in-out">
           <div className="absolute top-0 left-0 w-full px-6 py-4 flex items-center justify-between z-50 bg-transparent">
@@ -168,7 +144,7 @@ const TopNav: FC<TopNavProps> = (props) => {
                 }}>Architecture</button>
               {isMenuOpen1 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
-                  {["Residential", "Commercial", "Hospitality", "Recreational"].map((category) => (
+                  {["Residential", "Re-Creational", "Institutional", "Hospitality", "Commercial"].map((category) => (
                     <Link key={category} href={`/architecture?category=${category}`} className="text-[15px] font-medium text-gray-700 hover:text-red-500" onClick={handleLinkClick}>
                       {category.charAt(0).toUpperCase() + category.slice(1)}
                     </Link>

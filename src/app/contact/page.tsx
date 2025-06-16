@@ -17,9 +17,29 @@ export default function ContactUs() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log(formData);
+  // };
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+
+    const subject = encodeURIComponent("New Project Inquiry from Website");
+
+    const body = encodeURIComponent(
+      `Full Name: ${formData.fullName}\n` +
+      `Mobile No: ${formData.mobileNo}\n` +
+      `Email ID: ${formData.emailId}\n` +
+      `Service: ${formData.service}\n\n` +
+      `Project Details:\n${formData.projectDetails}`
+    );
+
+    // ✅ Gmail compose link
+    const gmailLink = `https://mail.google.com/mail/?view=cm&to=hr@sarvagyasofttech.com&su=${subject}&body=${body}`;
+
+    window.open(gmailLink, '_blank');
   };
 
   return (
