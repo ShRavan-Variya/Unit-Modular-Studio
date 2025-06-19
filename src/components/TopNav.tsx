@@ -85,10 +85,20 @@ const TopNav: FC<TopNavProps> = (props) => {
               </div>
             )}
           </div>
-          <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Shop</Link>
+          {/* <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Shop</Link> */}
           <Link href="/about" className={`${props.current === "about" ? "text-red-500" : "hover:text-red-500"}`}>About Us</Link>
           <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`}>Contact Us</Link>
         </nav>
+  
+        <div className={`absolute transition-all duration-700 ease-in-out flex space-x-10 text-gray-700 text-sm right-6 ${hovered ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+        {/* <div className="absolute  top-1/2 transform -translate-y-1/2"> */}
+          <Link href="/products" className={`flex items-center space-x-1 ${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h11l-1.5-7M9 21h.01M15 21h.01" />
+            </svg> */}
+            <span>Shop</span>
+          </Link>
+        </div>
       </div>
 
       {/* Mobile Navbar */}

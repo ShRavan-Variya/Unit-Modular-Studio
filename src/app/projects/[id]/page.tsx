@@ -1,6 +1,7 @@
 'use client';
 
-import {useRef, useEffect} from 'react';
+import {useRef, useEffect, useState} from 'react';
+import {MdArrowForward} from '@react-icons/all-files/md/MdArrowForward';
 import {projects} from '@/constants/Theme';
 import {useParams} from 'next/navigation';
 import {notFound} from 'next/navigation';
@@ -11,6 +12,7 @@ import Link from 'next/link';
 export default function ProjectDetailPage() {
   const params = useParams();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [showRightArrow, setShowRightArrow] = useState(true);
   const id = Array.isArray(params.id) ? params.id[0] : params.id;
   const project = projects.find((item) => item.title.replace(/\s+/g, '-').toLowerCase() === id);
 
@@ -18,13 +20,39 @@ export default function ProjectDetailPage() {
     notFound();
   }
 
+  const updateArrowVisibility = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const scrollLeft = container.scrollLeft;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+    setShowRightArrow(scrollLeft + 10 < maxScrollLeft);
+  };
+
+  const scrollToNext = () => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const children = Array.from(container.children);
+    const scrollLeft = container.scrollLeft;
+
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i] as HTMLElement;
+      if (child.offsetLeft > scrollLeft + 10) {
+        child.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+        break;
+      }
+    }
+  };
+
   useEffect(() => {
     const container = scrollContainerRef.current;
     if (!container) return;
-  
+
     let scrollTimeout: NodeJS.Timeout;
     container.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-  
+
     const handleWheel = (e: WheelEvent) => {
       if (e.deltaY !== 0) {
         e.preventDefault();
@@ -38,13 +66,23 @@ export default function ProjectDetailPage() {
         scrollTimeout = setTimeout(() => {
           container.style.transform = 'scale(1)';
         }, 100);
+
+        updateArrowVisibility();
       }
     };
-  
+
+    const handleScroll = () => {
+      updateArrowVisibility();
+    };
+
     container.addEventListener('wheel', handleWheel, { passive: false });
-  
+    container.addEventListener('scroll', handleScroll);
+
+    updateArrowVisibility();
+
     return () => {
       container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('scroll', handleScroll);
       clearTimeout(scrollTimeout);
     };
   }, []);
@@ -58,7 +96,7 @@ export default function ProjectDetailPage() {
             <Image
               src={imgSrc}
               alt={`Project Image ${index + 1}`}
-              className="h-full w-auto object-cover rounded-md"
+              className="h-full w-auto object-cover rounded-md pointer-events-none"
               // fill
               quality={100}
               // sizes="100vw"
@@ -68,6 +106,17 @@ export default function ProjectDetailPage() {
             />
           </div>
         ))}
+      </div>
+
+      <div className={`absolute top-1/2 right-0 h-64 w-64 z-20 transition-all duration-700 ease-in-out transform -translate-y-1/2 ${showRightArrow ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+        <div className="absolute inset-0 mix-blend-lighten bg-[radial-gradient(circle,#D1D5DB_10%,transparent_55%)]"></div>
+        <div className='flex justify-center items-center h-full relative'>
+          <button
+            onClick={scrollToNext}
+            className="bg-white rounded-full p-3 shadow-md z-10">
+            <MdArrowForward size={26} className="text-black" />
+          </button>
+        </div>
       </div>
     </div>
   );

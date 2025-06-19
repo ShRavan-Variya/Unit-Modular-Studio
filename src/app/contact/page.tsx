@@ -54,21 +54,35 @@ export default function ContactUs() {
         </nav>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-15 w-full px-30">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-7 xl:gap-10 w-full px-20 lg:px-15 xl:px-30">
         {/* Left Side - Contact Info */}
-        <div className="flex-3 space-y-4 text-xs">
+        <div className="flex-4 space-y-2 text-xs">
           <h1 className="text-xl font-bold mb-10 text-gray-500">CONTACT US</h1>
 
+          {/* <div className="flex flex-col md:flex-row gap-5 items-top">
+            <div className="flex-1 flex">
+              <p className="font-bold text-red-500 text-sm mb-2">Mobile No.:</p>
+              <p className="ml-2 text-gray-800 text-sm">+91 84214 91884</p>
+            </div>
+            <div className="flex-1 flex">
+              <p className="font-bold text-red-500 text-sm mb-2">Mobile No.:</p>
+              <p className="ml-2 text-gray-800 text-sm">+91 84214 91884</p>
+            </div>
+          </div> */}
           {/* Row 1: Address Left, Map Right */}
           <div className="flex flex-col md:flex-row gap-5 items-top">
             <div className="flex-1">
-              <p className="font-bold text-red-500 text-sm mb-2">ADDRESS:</p>
-              <p className="text-gray-800 text-sm">001-B, Prestige Apts, Yashwant Shrushtri, Boisar (West). 401 501.</p>
+              <p className="font-bold text-red-500 text-xs mb-2">ADDRESS:</p>
+              <p className="text-gray-800 text-xs">001-B, Prestige Apts, Yashwant Shrushtri, Boisar (West). 401 501.</p>
             </div>
             <div className="flex-1">
-              <p className="font-bold text-red-500 text-sm mb-2">ADDRESS:</p>
-              <p className="text-gray-800 text-sm">1805, Kamdhenu 23 West, TTC MIDC, Koparkhairane, Navi Mumbai. 400 705.</p>
+              <p className="font-bold text-red-500 text-xs mb-2">ADDRESS:</p>
+              <p className="text-gray-800 text-xs">1805, Kamdhenu 23 West, TTC MIDC, Koparkhairane, Navi Mumbai. 400 705.</p>
             </div>
+          </div>
+          <div className="flex mb-5 items-baseline">
+            <p className="font-bold text-red-500 text-xs">Mobile No.:</p>
+            <p className="ml-2 text-gray-800 text-xs">+91 84214 91884</p>
           </div>
 
           {/* Row 2: Map Left, Address Right */}
