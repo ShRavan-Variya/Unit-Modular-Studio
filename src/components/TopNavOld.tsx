@@ -49,7 +49,7 @@ const TopNav: FC<TopNavProps> = (props) => {
           </div>
           <Link href="/products" className={`${props.current === 'products' ? 'text-red-500' : 'hover:text-red-500'}`}>Products</Link>
           <Link href="/about" className={`${props.current === 'about' ? 'text-red-500' : 'hover:text-red-500'}`}>About Us</Link>
-          <Link href="/contact" className={`${props.current === 'contact' ? 'text-red-500' : 'hover:text-red-500'}`}>Contact us</Link>
+          <Link href="/contact" className={`${props.current === 'contact' ? 'text-red-500' : 'hover:text-red-500'}`}>Contact Us</Link>
         </nav>
       </div>
     </header>

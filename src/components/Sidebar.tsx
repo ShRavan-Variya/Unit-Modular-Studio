@@ -11,7 +11,7 @@ const Sidebar: FC<any> = (props) => {
         <Link href="/arch" className="hover:text-red-500">Architecture</Link>
         <Link href="/interior" className="hover:text-red-500">Interior Design</Link>
         <Link href="/about" className="hover:text-red-500">About Us</Link>
-        <Link href="/contact" className="hover:text-red-500">Contact us</Link>
+        <Link href="/contact" className="hover:text-red-500">Contact Us</Link>
       </nav>
     </aside>
   );

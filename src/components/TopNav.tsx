@@ -32,7 +32,11 @@ const TopNav: FC<TopNavProps> = (props) => {
           <div className="relative w-8 h-8">
             <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" priority />
           </div>
-          <h1 className="text-2xl font-normal whitespace-nowrap">
+          <h1
+            className={`text-2xl font-normal whitespace-nowrap transition-all duration-500 ease-in-out
+              ${hovered ? "opacity-0 translate-x-[-20px] scale-95" : "opacity-100 translate-x-0 scale-100"}
+            `}
+          >
             <span style={{ color: "#ED5858" }} className="font-semibold">CRAFT</span>{" "}
             <span className="text-gray-500">SPACES</span>
           </h1>
@@ -81,9 +85,9 @@ const TopNav: FC<TopNavProps> = (props) => {
               </div>
             )}
           </div>
-          <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Products</Link>
+          <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Shop</Link>
           <Link href="/about" className={`${props.current === "about" ? "text-red-500" : "hover:text-red-500"}`}>About Us</Link>
-          <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`}>Contact us</Link>
+          <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`}>Contact Us</Link>
         </nav>
       </div>
 
@@ -170,9 +174,9 @@ const TopNav: FC<TopNavProps> = (props) => {
               )}
             </div>
 
-            <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Products</Link>
+            <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Shop</Link>
             <Link href="/about" className={`${props.current === "about" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>About Us</Link>
-            <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Contact us</Link>
+            <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Contact Us</Link>
           </nav>
         </div>
       )}

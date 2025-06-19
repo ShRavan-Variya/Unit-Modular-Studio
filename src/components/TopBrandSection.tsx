@@ -15,7 +15,7 @@ const TopBrandSection: FC<any> = (props) => {
         <span className="text-gray-500">SPACES</span>
       </h1>
       <p className="text-gray-700 text-sm uppercase tracking-widest">
-        <span className="mr-4">architecture</span> | <span className="ml-4">interior design</span>
+        <span className="mr-4">Architecture</span> | <span className="ml-4">Industrial design</span>
       </p>
     </div>
   );

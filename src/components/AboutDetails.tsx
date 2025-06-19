@@ -7,7 +7,7 @@ const AboutDetails: FC<any> = (props) => {
     <div className="mx-auto text-justify text-gray-800 leading-relaxed px-4 mb-12">
       <h2 className="text-xl font-bold text-center mb-4">ABOUT US</h2>
       <p>
-        <strong>CRAFT SPACES</strong> multidisciplinary Architecture, Interior & Landscape Firm founded in 2017. <strong>Sudhanshu Yande</strong> & <strong>Abhishek Dukane</strong> are the joint Principal Architects of Craft Spaces with a team of 10 people.
+        <strong>CRAFT SPACES</strong> multidisciplinary Architecture, Interior & Landscape Firm founded in 2017. <strong>Ar. Sudhanshu Yande</strong> & <strong>Ar. Abhishek Dukane</strong> are the joint Principal Architects of Craft Spaces with a team of 10 people.
       </p>
       <br />
       <p>

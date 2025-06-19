@@ -46,14 +46,14 @@ export default function AboutUs() {
           <TeamMember
             imageSrc={abhishek}
             quote="Small things make perfection but perfection is not a small thing."
-            name="Ar. Abhishek Dukan"
+            name="Ar. Abhishek Dukane"
             role="Co-Founder"
           />
         </div>
 
 
-        <DesignProcess />
-        <Gallery images={images} />
+        {/* <DesignProcess />
+        <Gallery images={images} /> */}
       </div>
     </div>
   );
