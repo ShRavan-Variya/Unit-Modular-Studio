@@ -13,7 +13,7 @@ export default function Products() {
         <nav className="flex space-x-2" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>
           <span>&gt;</span>
-          <span className="text-red-500 font-medium">Products</span>
+          <span className="text-red-500 font-medium">Shop</span>
         </nav>
       </div>
       <div className="w-full mx-auto overflow-y-auto px-8">
