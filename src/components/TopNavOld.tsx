@@ -20,7 +20,7 @@ const TopNav: FC<TopNavProps> = (props) => {
       <div className="container mx-auto flex justify-between items-center px-6 py-4">
         <Link href="/" className="flex items-center space-x-2 cursor-pointer">
           <div className="relative w-8 h-8">
-            <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" priority />
+            <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain pointer-events-none" priority />
           </div>
           <h1 className="text-2xl font-normal">
             <span style={{ color: "#ED5858" }} className='font-semibold'>CRAFT</span>{" "}

@@ -30,7 +30,7 @@ const TopNav: FC<TopNavProps> = (props) => {
           href="/"
           className={`absolute flex items-center space-x-2 cursor-pointer transition-all duration-700 ease-in-out ${hovered ? "left-6" : "left-1/2 -translate-x-1/2"}`}>
           <div className="relative w-8 h-8">
-            <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" priority />
+            <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain pointer-events-none" priority />
           </div>
           <h1
             className={`text-2xl font-normal whitespace-nowrap transition-all duration-500 ease-in-out
@@ -106,7 +106,7 @@ const TopNav: FC<TopNavProps> = (props) => {
         {/* Logo Left on Mobile */}
         <Link href="/" className="flex items-center space-x-2">
           <div className="relative w-8 h-8">
-            <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" priority />
+            <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain pointer-events-none" priority />
           </div>
           <h1 className="text-xl font-normal whitespace-nowrap">
             <span style={{ color: "#ED5858" }} className="font-semibold">CRAFT</span>{" "}
@@ -129,7 +129,7 @@ const TopNav: FC<TopNavProps> = (props) => {
             <Link href="/">
               <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
                 <div className="relative w-8 h-8">
-                  <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" />
+                  <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain pointer-events-none" />
                 </div>
                 <h1 className="text-xl font-semibold whitespace-nowrap">
                   <span style={{ color: "#ED5858" }}>CRAFT</span>{" "}

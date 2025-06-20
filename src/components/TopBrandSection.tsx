@@ -7,7 +7,7 @@ const TopBrandSection: FC<any> = (props) => {
     <div className="text-center mb-10">
       <div className="flex justify-center items-center mb-4">
         <div className="relative w-24 h-24">
-          <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain" priority />
+          <Image src={logo} alt="Craft Spaces Logo" fill className="object-contain pointer-events-none" priority />
         </div>
       </div>
       <h1 className="text-2xl font-normal whitespace-nowrap">

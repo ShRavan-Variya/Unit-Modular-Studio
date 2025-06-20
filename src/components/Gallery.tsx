@@ -17,7 +17,7 @@ const Gallery: React.FC<GalleryProps> = (props) => {
               alt={img.alt}
               width={800}
               height={600}
-              className="w-full h-auto"
+              className="w-full h-auto pointer-events-none"
             />
           </div>
         ))}

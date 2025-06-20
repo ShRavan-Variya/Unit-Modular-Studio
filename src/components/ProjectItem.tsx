@@ -22,7 +22,7 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
           <div className="relative ml-auto overflow-hidden transition-all duration-700 ease-in-out h-0 group-hover:h-16 w-16 transform translate-x-20 group-hover:translate-x-0">
             <Image
               src={props.icon}
-              alt="Small Hover Image"
+              alt="Small Hover Image pointer-events-none"
               fill
               style={{ objectFit: 'cover' }}
               className=""
@@ -42,7 +42,7 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
                 alt={props.title}
                 fill
                 style={{ objectFit: 'cover' }}
-                className="rounded-xl"
+                className="rounded-xl pointer-events-none"
               />
             </div>
             
@@ -53,7 +53,7 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
                   alt="Preview"
                   fill
                   style={{ objectFit: 'contain' }}
-                  className="rounded-xl"
+                  className="rounded-xl pointer-events-none"
                 />
               </div>
               <p className="text-sm text-gray-600 text-center max-w-full mt-4">
