@@ -108,8 +108,8 @@ export default function ProjectDetailPage() {
         ))}
       </div>
 
-      <div className={`absolute top-1/2 right-0 h-64 w-64 z-20 transition-all duration-700 ease-in-out transform -translate-y-1/2 ${showRightArrow ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-        <div className="absolute inset-0 mix-blend-lighten bg-[radial-gradient(circle,#D1D5DB_10%,transparent_55%)]"></div>
+      <div className={`absolute top-1/2 right-0 h-50 w-50 z-20 transition-all duration-700 ease-in-out transform -translate-y-1/2 ${showRightArrow ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+        {/* <div className="absolute inset-0 mix-blend-lighten bg-[radial-gradient(circle,#D1D5DB_0%,transparent_35%)]"></div> */}
         <div className='flex justify-center items-center h-full relative'>
           <button
             onClick={scrollToNext}
@@ -118,6 +118,16 @@ export default function ProjectDetailPage() {
           </button>
         </div>
       </div>
+
+      {/* <div className={`absolute top-1/2 right-0 h-45 w-45 z-20 pointer-events-none transition-all duration-700 ease-in-out transform -translate-y-1/2 ${showRightArrow ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(156,163,175,0.4)_0%,transparent_80%)]"></div>
+        <div className="absolute top-0 right-0 h-full w-full rounded-full overflow-hidden pointer-events-none">
+          <div className="w-full h-full bg-gradient-to-l from-white/80 via-white/30 to-transparent backdrop-blur-xl rounded-full"></div>
+        </div>
+        <div className="absolute top-1/2 right-1/2 translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-md">
+          <MdArrowForward size={26} className="text-black" />
+        </div>
+      </div> */}
     </div>
   );
 }
