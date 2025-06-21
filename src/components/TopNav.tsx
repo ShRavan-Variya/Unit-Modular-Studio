@@ -1,5 +1,5 @@
 "use client";
-import {FC, useState} from 'react';
+import {FC, SetStateAction, useEffect, useState} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/assets/logo.png';
@@ -8,17 +8,38 @@ interface TopNavProps {
   current?: string;
 }
 
+interface CategoriesProps {
+  name: string;
+  subcategories: string[];
+  showMenu: boolean;
+}
+
 const TopNav: FC<TopNavProps> = (props) => {
-  const [hovered, setHovered] = useState(false);
-  const [isMenuOpen1, setIsMenuOpen1] = useState(false);
-  const [isMenuOpen2, setIsMenuOpen2] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hovered, setHovered] = useState<boolean>(false);
+  const [isMenuOpen1, setIsMenuOpen1] = useState<boolean>(false);
+  const [isMenuOpen2, setIsMenuOpen2] = useState<boolean>(false);
+  const [isMenuOpen3, setIsMenuOpen3] = useState<boolean>(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  const [categoriesData, setCategoriesData] = useState<CategoriesProps[]>([]);
+
+  useEffect(() => {
+    const newList: any = [];
+    newList.push({name: "Modular Furniture", subcategories: ["Commercial", "Residential"], showMenu: false});
+    newList.push({name: "Bespoke Furniture", subcategories: [], showMenu: false});
+    setCategoriesData(newList)
+  }, [])
 
   const handleLinkClick = () => {
     setIsMenuOpen1(false);
     setIsMenuOpen2(false);
+    setIsMenuOpen3(false)
     setMobileMenuOpen(false);
     setHovered(false);
+  };
+
+  const handleSubcategoryClick = (categoryName: string, subCategoryName: string) => {
+    window.location.href = `/products?category=${categoryName}&subcategory=${subCategoryName}`;
+    handleLinkClick();
   };
 
   return (
@@ -46,31 +67,12 @@ const TopNav: FC<TopNavProps> = (props) => {
         <nav className={`transition-all duration-700 ease-in-out flex space-x-10 text-gray-700 text-sm ${hovered ? "opacity-100 visible" : "opacity-0 invisible"}`}>
           {/* <Link href="/architecture" className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"}`}>Architecture</Link> */}
           <div className="relative group">
-            <div className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"}`}>
-              <button
-                onClick={() => {
-                  setIsMenuOpen1(!isMenuOpen1)
-                  setIsMenuOpen2(false)
-                }}>Architecture</button>
-            </div>
-            {isMenuOpen1 && (
-              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
-                {["Residential", "Re-Creational", "Institutional", "Hospitality", "Commercial"].map(
-                  (category) => (
-                    <Link key={category} href={`/architecture?category=${category}`} className="block px-4 py-1 text-gray-600 hover:bg-gray-100 hover:text-red-500" onClick={handleLinkClick} >
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
-                    </Link>
-                  )
-                )}
-              </div>
-            )}
-          </div>
-          <div className="relative group">
             <div className={`${props.current === "industrial" ? "text-red-500" : "hover:text-red-500"}`}>
               <button
                 onClick={() => {
                   setIsMenuOpen1(false)
                   setIsMenuOpen2(!isMenuOpen2)
+                  setIsMenuOpen3(false)
                 }}>Industrial Design</button>
             </div>
             {isMenuOpen2 && (
@@ -85,19 +87,77 @@ const TopNav: FC<TopNavProps> = (props) => {
               </div>
             )}
           </div>
+          <div className="relative group">
+            <div className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"}`}>
+              <button
+                onClick={() => {
+                  setIsMenuOpen1(!isMenuOpen1)
+                  setIsMenuOpen2(false)
+                  setIsMenuOpen3(false)
+                }}>Architecture</button>
+            </div>
+            {isMenuOpen1 && (
+              <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
+                {["Residential", "Re-Creational", "Institutional", "Hospitality", "Commercial"].map(
+                  (category) => (
+                    <Link key={category} href={`/architecture?category=${category}`} className="block px-4 py-1 text-gray-600 hover:bg-gray-100 hover:text-red-500" onClick={handleLinkClick} >
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </Link>
+                  )
+                )}
+              </div>
+            )}
+          </div>
           {/* <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Shop</Link> */}
           <Link href="/about" className={`${props.current === "about" ? "text-red-500" : "hover:text-red-500"}`}>About Us</Link>
           <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`}>Contact Us</Link>
         </nav>
   
         <div className={`absolute transition-all duration-700 ease-in-out flex space-x-10 text-gray-700 text-sm right-6 ${hovered ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-        {/* <div className="absolute  top-1/2 transform -translate-y-1/2"> */}
-          <Link href="/products" className={`flex items-center space-x-1 ${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.5 7h11l-1.5-7M9 21h.01M15 21h.01" />
-            </svg> */}
-            <span>Shop</span>
-          </Link>
+          <div className="relative group">
+            <div className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>
+              <button
+                onClick={() => {
+                  setIsMenuOpen1(false)
+                  setIsMenuOpen2(false)
+                  setIsMenuOpen3(!isMenuOpen3)
+                }}>Shop</button>
+            </div>
+            {isMenuOpen3 && (
+              <div className="absolute top-full right-0 mt-2 w-56 bg-white rounded-md shadow-lg py-2 z-50">
+                {categoriesData.map((category: any, index: number) => (
+                  <div key={category.name}>
+                    <button
+                      onClick={() => {
+                        const newList = [...categoriesData]
+                        console.log('newList[index] ::: ', JSON.stringify(newList[index]));
+                        
+                        if (newList[index].subcategories && newList[index].subcategories.length > 0) {
+                          newList[index].showMenu = !newList[index].showMenu
+                        } else {
+                          window.location.href = `/products?category=${category.name}`;
+                        }
+                        setCategoriesData(newList)
+                      }}
+                      className={`block text-left w-full px-4 py-1 text-gray-600 hover:bg-gray-100 hover:text-red-500 ${category.showMenu ? "bg-gray-100 text-red-500" : null}`}
+                      // className="text-left w-full text-gray-700 hover:text-red-500 hover:bg-gray-100"
+                    >
+                      {category.name}
+                    </button>
+
+                    {/* Show subcategories if this category is active */}
+                    {category.showMenu && category.subcategories && category.subcategories.map((sub: string) => (
+                      <button
+                        key={sub}
+                        onClick={() => handleSubcategoryClick(category.name, sub)}
+                        className="block text-sm w-full text-left text-gray-600 hover:text-red-500 py-1 pl-8"
+                      >{sub}</button>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -151,27 +211,11 @@ const TopNav: FC<TopNavProps> = (props) => {
             {/* <Link href="/architecture" onClick={handleLinkClick}>Architecture</Link>  */}
             <div>
               <button
-                className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
-                onClick={() => {
-                  setIsMenuOpen1(!isMenuOpen1)
-                  setIsMenuOpen2(false)
-                }}>Architecture</button>
-              {isMenuOpen1 && (
-                <div className="ml-4 mt-2 flex flex-col space-y-2">
-                  {["Residential", "Re-Creational", "Institutional", "Hospitality", "Commercial"].map((category) => (
-                    <Link key={category} href={`/architecture?category=${category}`} className="text-[15px] font-medium text-gray-700 hover:text-red-500" onClick={handleLinkClick}>
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div>
-              <button
                 className={`${props.current === "industrial" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
                 onClick={() => {
                   setIsMenuOpen1(false)
                   setIsMenuOpen2(!isMenuOpen2)
+                  setIsMenuOpen3(false)
                 }}>Industrial Design</button>
               {isMenuOpen2 && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
@@ -183,10 +227,71 @@ const TopNav: FC<TopNavProps> = (props) => {
                 </div>
               )}
             </div>
+            <div>
+              <button
+                className={`${props.current === "architecture" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
+                onClick={() => {
+                  setIsMenuOpen1(!isMenuOpen1)
+                  setIsMenuOpen2(false)
+                  setIsMenuOpen3(false)
+                }}>Architecture</button>
+              {isMenuOpen1 && (
+                <div className="ml-4 mt-2 flex flex-col space-y-2">
+                  {["Residential", "Re-Creational", "Institutional", "Hospitality", "Commercial"].map((category) => (
+                    <Link key={category} href={`/architecture?category=${category}`} className="text-[15px] font-medium text-gray-700 hover:text-red-500" onClick={handleLinkClick}>
+                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
 
-            <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Shop</Link>
             <Link href="/about" className={`${props.current === "about" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>About Us</Link>
             <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Contact Us</Link>
+
+            <div>
+              <button
+                className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
+                onClick={() => {
+                  setIsMenuOpen1(false)
+                  setIsMenuOpen2(false)
+                  setIsMenuOpen3(!isMenuOpen3)
+                }}>Shop</button>
+
+              {isMenuOpen3 && (
+                <div className="ml-4 mt-2 flex flex-col space-y-2">
+                  {categoriesData.map((category: any, index: number) => (
+                    <div key={category.name}>
+                      <button
+                        onClick={() => {
+                          const newList = [...categoriesData]
+                          console.log('newList[index] ::: ', JSON.stringify(newList[index]));
+                          
+                          if (newList[index].subcategories && newList[index].subcategories.length > 0) {
+                            newList[index].showMenu = !newList[index].showMenu
+                          } else {
+                            window.location.href = `/products?category=${category.name}`;
+                          }
+                          setCategoriesData(newList)
+                        }}
+                        className={`text-[15px] w-full text-left font-medium text-gray-700 hover:text-red-500 ${category.showMenu ? "text-red-500" : null}`}
+                      >
+                        {category.name}
+                      </button>
+
+                      {/* Show subcategories if this category is active */}
+                      {category.showMenu && category.subcategories && category.subcategories.map((sub: string) => (
+                        <button
+                          key={sub}
+                          onClick={() => handleSubcategoryClick(category.name, sub)}
+                          className="block text-[15px] w-full text-left text-gray-600 hover:text-red-500 py-1 pl-4"
+                        >{sub}</button>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
         </div>
       )}

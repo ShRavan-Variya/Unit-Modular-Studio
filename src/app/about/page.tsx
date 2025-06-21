@@ -25,7 +25,7 @@ export default function AboutUs() {
     <div className="bg-white min-h-screen flex flex-col pt-20 pb-20">
       <TopNav current={'about'}/>
       {/* Breadcrumb */}
-      <div className="w-full px-30 py-4 text-sm text-gray-500">
+      <div className="w-full px-18 py-4 text-sm text-gray-500">
         <nav className="flex space-x-2" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>
           <span>&gt;</span>

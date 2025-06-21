@@ -9,6 +9,18 @@ import TopNav from '@/components/TopNav';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// export async function generateStaticParams() {
+//   return [
+//     { id: 'ankur todi' },
+//     { id: 'dilip pimple bungalow project' },
+//     { id: 'manjushree project' },
+//     { id: 'rh-14' },
+//     { id: 'tvm' },
+//     { id: 'e-46' },
+//     { id: 'vecap' },
+//   ];
+// }
+
 export default function ProjectDetailPage() {
   const params = useParams();
   const scrollContainerRef = useRef<HTMLDivElement>(null);

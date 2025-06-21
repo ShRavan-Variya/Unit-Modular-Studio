@@ -46,7 +46,7 @@ export default function ContactUs() {
     <div className="bg-white min-h-screen flex flex-col pt-20 pb-20 items-center">
       <TopNav current={'contact'}/>
       {/* Breadcrumb */}
-      <div className="w-full px-30 py-4 text-sm text-gray-500 mb-15">
+      <div className="w-full px-18 py-4 text-sm text-gray-500 mb-15">
         <nav className="flex space-x-2" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>
           <span>&gt;</span>

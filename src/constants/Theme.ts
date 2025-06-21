@@ -152,3 +152,7 @@ export const projects = [
     images: [VECAPS01, VECAPS02, VECAPS03]
   }
 ];
+
+export const products = [
+  {id: 1, image: E46001, category: '', subcategory: ''}
+];
