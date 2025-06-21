@@ -1,29 +1,13 @@
 "use client";
 
 import {useSearchParams} from "next/navigation";
-import {StaticImageData} from "next/image";
 import Link from "next/link";
-import ProjectItem from "@/components/ProjectItem";
 import TopNav from "@/components/TopNav";
-import {products} from "@/constants/Theme";
-
-interface ProductsItem {
-  id: number;
-  image: StaticImageData;
-  category: string;
-  subcategory: string;
-}
 
 export default function Products() {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   const subcategory = searchParams.get("subcategory");
-
-  const filteredProjects = products.filter((item: ProductsItem) => {
-    const matchCategory = category ? item.category === category : true;
-    const matchSubcategory = subcategory ? item.subcategory === subcategory : true;
-    return matchCategory && matchSubcategory;
-  });
 
   return (
     <div className="w-full min-h-screen bg-white mx-auto overflow-y-auto p-8 pt-20">
@@ -52,9 +36,6 @@ export default function Products() {
       </div>
       <div className="w-full mx-auto overflow-y-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* {filteredProjects.map((item: any, index: number) => (
-            
-          ))} */}
         </div>
       </div>
     </div>
