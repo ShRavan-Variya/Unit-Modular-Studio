@@ -10,7 +10,7 @@ const ProjectList: FC<ProjectListProps> = (props) => {
   //   : projects.filter((item) => item.category === props.filter);
 
   return (
-    <div className="w-full mx-auto overflow-y-auto p-8">
+    <div className="w-full px-18 mx-auto overflow-y-auto p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {projects.map((item: any, index: number) => (
           <ProjectItem

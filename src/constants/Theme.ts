@@ -153,6 +153,40 @@ export const projects = [
   }
 ];
 
+// SHOP
+import com01 from '@/assets/shop/commercial/01.jpg';
+import com02 from '@/assets/shop/commercial/02.jpg';
+import com03 from '@/assets/shop/commercial/03.jpg';
+import com04 from '@/assets/shop/commercial/04.jpg';
+import res01 from '@/assets/shop/residential/01.jpg';
+import res02 from '@/assets/shop/residential/02.jpg';
+import bes01 from '@/assets/shop/bespoke/01.jpg';
+import bes02 from '@/assets/shop/bespoke/02.jpg';
+import bes03 from '@/assets/shop/bespoke/03.jpg';
+
 export const products = [
-  {id: 1, image: E46001, category: '', subcategory: ''}
+  {id: 1, image: com01, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 2, image: com02, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 3, image: com03, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 4, image: com04, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 5, image: res01, category: 'Modular Furniture', subcategory: 'Residential'},
+  {id: 6, image: res02, category: 'Modular Furniture', subcategory: 'Residential'},
+  {id: 7, image: bes01, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/chatur-centre-table/'},
+  {id: 8, image: bes02, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/asan-chair/'},
+  {id: 9, image: bes03, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/bormala-coat-hanger/'}
+];
+
+// PARTNERS
+import partner01 from '@/assets/partners/01.png';
+import partner02 from '@/assets/partners/02.png';
+import partner03 from '@/assets/partners/03.png';
+import partner04 from '@/assets/partners/04.png';
+import partner05 from '@/assets/partners/05.png';
+
+export const partners = [
+  {id: 1, image: partner01},
+  {id: 2, image: partner02},
+  {id: 3, image: partner03},
+  {id: 4, image: partner04},
+  {id: 5, image: partner05},
 ];

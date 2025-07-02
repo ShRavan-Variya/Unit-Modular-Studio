@@ -47,3 +47,27 @@ body {
 img::-webkit-media-controls {
   display: none !important;
 }
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-partners {
+  display: flex;
+  white-space: nowrap;
+  animation: scrollLeft 20s linear infinite;
+  gap: 1rem; /* gap between logos */
+}
+/* Optional - to hide scrollbars */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
