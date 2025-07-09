@@ -115,7 +115,8 @@ const TopNav: FC<TopNavProps> = (props) => {
   
         <div className={`absolute transition-all duration-700 ease-in-out flex space-x-10 text-gray-700 text-sm right-6 ${hovered ? "opacity-100 visible" : "opacity-0 invisible"}`}>
           <div className="relative group">
-            <div className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>
+            <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Shop</Link>
+            {/* <div className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>
               <button
                 onClick={() => {
                   setIsMenuOpen1(false)
@@ -144,8 +145,6 @@ const TopNav: FC<TopNavProps> = (props) => {
                     >
                       {category.name}
                     </button>
-
-                    {/* Show subcategories if this category is active */}
                     {category.showMenu && category.subcategories && category.subcategories.map((sub: string) => (
                       <button
                         key={sub}
@@ -156,7 +155,7 @@ const TopNav: FC<TopNavProps> = (props) => {
                   </div>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         </div>
       </div>
@@ -250,7 +249,9 @@ const TopNav: FC<TopNavProps> = (props) => {
             <Link href="/contact" className={`${props.current === "contact" ? "text-red-500" : "hover:text-red-500"}`} onClick={handleLinkClick}>Contact Us</Link>
 
             <div>
-              <button
+
+              <Link href="/products" className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"}`}>Shop</Link>
+              {/* <button
                 className={`${props.current === "products" ? "text-red-500" : "hover:text-red-500"} w-full text-left`}
                 onClick={() => {
                   setIsMenuOpen1(false)
@@ -279,7 +280,6 @@ const TopNav: FC<TopNavProps> = (props) => {
                         {category.name}
                       </button>
 
-                      {/* Show subcategories if this category is active */}
                       {category.showMenu && category.subcategories && category.subcategories.map((sub: string) => (
                         <button
                           key={sub}
@@ -290,7 +290,7 @@ const TopNav: FC<TopNavProps> = (props) => {
                     </div>
                   ))}
                 </div>
-              )}
+              )} */}
             </div>
           </nav>
         </div>

@@ -165,15 +165,15 @@ import bes02 from '@/assets/shop/bespoke/02.jpg';
 import bes03 from '@/assets/shop/bespoke/03.jpg';
 
 export const products = [
-  {id: 1, image: com01, category: 'Modular Furniture', subcategory: 'Commercial'},
-  {id: 2, image: com02, category: 'Modular Furniture', subcategory: 'Commercial'},
-  {id: 3, image: com03, category: 'Modular Furniture', subcategory: 'Commercial'},
-  {id: 4, image: com04, category: 'Modular Furniture', subcategory: 'Commercial'},
-  {id: 5, image: res01, category: 'Modular Furniture', subcategory: 'Residential'},
-  {id: 6, image: res02, category: 'Modular Furniture', subcategory: 'Residential'},
-  {id: 7, image: bes01, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/chatur-centre-table/'},
-  {id: 8, image: bes02, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/asan-chair/'},
-  {id: 9, image: bes03, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/bormala-coat-hanger/'}
+  {id: 1, image: com01, image2: com03, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 2, image: com02, image2: com04, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 3, image: com03, image2: com01, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 4, image: com04, image2: com02, category: 'Modular Furniture', subcategory: 'Commercial'},
+  {id: 5, image: res01, image2: res02, category: 'Modular Furniture', subcategory: 'Residential'},
+  {id: 6, image: res02, image2: res01, category: 'Modular Furniture', subcategory: 'Residential'},
+  {id: 7, image: bes01, image2: bes02, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/chatur-centre-table/'},
+  {id: 8, image: bes02, image2: bes03, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/asan-chair/'},
+  {id: 9, image: bes03, image2: bes01, category: 'Bespoke Furniture', subcategory: '', link: 'https://sutary.com/product/bormala-coat-hanger/'}
 ];
 
 // PARTNERS
