@@ -1,13 +1,17 @@
 import React, {FC} from 'react';
 import Image, {StaticImageData} from 'next/image';
+import {SpecialZoomLevel, Viewer, Worker} from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 import Link from 'next/link';
+
+type ImageOrPath = StaticImageData | string;
 
 interface ProjectItemProps {
   title: string;
   subtitle: string;
-  mainImage: StaticImageData;
-  icon: StaticImageData;
-  previewImage: StaticImageData;
+  mainImage: ImageOrPath;
+  icon: ImageOrPath;
+  previewImage: ImageOrPath;
   description: string;
 }
 
@@ -20,13 +24,27 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
         <div className="w-40 text-right pt-3 shrink-0 relative overflow-hidden">
           {/* Animated Image on Hover */}
           <div className="relative ml-auto overflow-hidden transition-all duration-700 ease-in-out h-0 group-hover:h-16 w-16 transform translate-x-20 group-hover:translate-x-0">
-            <Image
-              src={props.icon}
-              alt="Small Hover Image pointer-events-none"
-              fill
-              style={{ objectFit: 'cover' }}
-              className=""
-            />
+            {typeof props.icon === "string" && props.icon.endsWith(".pdf") ? (
+              <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                <Viewer
+                  fileUrl={props.icon}
+                  defaultScale={0.038}
+                  renderLoader={() => (
+                    <div className="flex items-center justify-center min-h-screen text-black">
+                      Loading PDF...
+                    </div>
+                  )}
+                />
+              </Worker>
+            ) : (
+              <Image
+                src={props.icon}
+                alt="Small Hover Image pointer-events-none"
+                fill
+                style={{ objectFit: 'cover' }}
+                className=""
+              />
+            )}
           </div>
 
           {/* Title and Subtitle */}
@@ -35,26 +53,59 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
         </div>
   
         <div className="relative group w-full max-w-[500px] min-h-[350px] perspective-1000">
-          <div className="relative w-full h-[350px] transition-transform duration-700 ease-in-out transform-gpu group-hover:rotate-y-180 [transform-style:preserve-3d] shadow-md group-hover:shadow-lg rounded-xl">
-            <div className="absolute w-full h-full [backface-visibility:hidden] rounded-xl shadow-md">
-              <Image
-                src={props.mainImage}
-                alt={props.title}
-                fill
-                style={{ objectFit: 'cover' }}
-                className="rounded-xl pointer-events-none"
-              />
+          <div className={`relative w-full h-[350px] transition-transform duration-700 ease-in-out transform-gpu group-hover:rotate-y-180 [transform-style:preserve-3d] ${typeof props.mainImage === "string" && props.mainImage.endsWith(".pdf") ? "" : "shadow-md group-hover:shadow-lg rounded-xl"}`}>
+            <div className={`absolute w-full h-full [backface-visibility:hidden] ${typeof props.mainImage === "string" && props.mainImage.endsWith(".pdf") ? "" : "rounded-xl shadow-md"}`}>
+              {typeof props.mainImage === "string" && props.mainImage.endsWith(".pdf") ? (
+                <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                  <Viewer
+                    fileUrl={props.mainImage}
+                    defaultScale={0.293}
+                    renderLoader={() => (
+                      <div className="flex items-center justify-center min-h-screen text-black">
+                        Loading PDF...
+                      </div>
+                    )}
+                  />
+                </Worker>
+              ) : (
+                <Image
+                  src={props.mainImage}
+                  alt={props.title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-xl pointer-events-none"
+                />
+              )}
             </div>
             
             <div className="absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] bg-white rounded-xl flex flex-col items-center justify-center p-6 shadow-[0_10px_20px_rgba(0,0,0,0.25)]">
               <div className="relative flex-1 w-full">
-                <Image
-                  src={props.previewImage}
-                  alt="Preview"
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  className="rounded-xl pointer-events-none"
-                />
+                {typeof props.previewImage === "string" && props.previewImage.endsWith(".pdf") ? (
+                  // <iframe
+                  //   src={props.previewImage}
+                  //   className="w-full h-full rounded-xl pointer-events-none"
+                  //   title="PDF Preview"
+                  // />
+                  <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
+                    <Viewer
+                      fileUrl={props.previewImage}
+                      defaultScale={0.18}
+                      renderLoader={() => (
+                        <div className="flex items-center justify-center min-h-screen text-black">
+                          Loading PDF...
+                        </div>
+                      )}
+                    />
+                  </Worker>
+                ) : (
+                  <Image
+                    src={props.previewImage}
+                    alt="Preview"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    className="rounded-xl pointer-events-none"
+                  />
+                )}
               </div>
               <p className="text-sm text-gray-600 text-center max-w-full mt-4">
                 {props.description}

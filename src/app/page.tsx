@@ -1,5 +1,4 @@
 "use client";
-import {useEffect, useRef} from "react";
 import ProjectList from "@/components/ProjectList";
 import {partners} from "@/constants/Theme";
 import TopNav from "@/components/TopNav";

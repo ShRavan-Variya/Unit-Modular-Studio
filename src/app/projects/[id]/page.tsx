@@ -3,11 +3,11 @@
 import {useRef, useEffect, useState} from 'react';
 import {MdArrowForward} from '@react-icons/all-files/md/MdArrowForward';
 import {projects} from '@/constants/Theme';
+import PdfFile from '@/components/PdfFile';
 import {useParams} from 'next/navigation';
 import {notFound} from 'next/navigation';
 import TopNav from '@/components/TopNav';
 import Image from 'next/image';
-import Link from 'next/link';
 
 // export async function generateStaticParams() {
 //   return [
@@ -103,21 +103,29 @@ export default function ProjectDetailPage() {
     <div className="relative h-screen bg-white overflow-hidden">
       <TopNav />
       <div ref={scrollContainerRef} className="flex overflow-x-auto overflow-y-hidden h-full pt-24 pb-6 gap-2 px-10 scrollbar-hide scroll-smooth snap-x snap-mandatory">
-        {project.images.map((imgSrc: any, index: number) => (
-          <div key={index} className="flex-shrink-0 h-full relative">
-            <Image
-              src={imgSrc}
-              alt={`Project Image ${index + 1}`}
-              className="h-full w-auto object-cover rounded-md pointer-events-none"
-              // fill
-              quality={100}
-              // sizes="100vw"
-              priority={index < 3}
-              // sizes="(max-width: 768px) 80vw, 30vw"
-              // sizes="(max-width: 768px) 80vw, 30vw"
-            />
-          </div>
-        ))}
+        {project.images.map((src: any, index: number) => {
+          const isPdf = typeof src === 'string' && src.endsWith('.pdf');
+
+          return (
+            <div key={index} className="flex-shrink-0 h-full relative">
+              {isPdf ? (
+                <PdfFile file={src} />
+              ) : (
+                <Image
+                  src={src}
+                  alt={`Project Image ${index + 1}`}
+                  className="h-full w-auto object-cover rounded-md pointer-events-none"
+                  // fill
+                  quality={100}
+                  // sizes="100vw"
+                  priority={index < 3}
+                  // sizes="(max-width: 768px) 80vw, 30vw"
+                  // sizes="(max-width: 768px) 80vw, 30vw"
+                />
+              )}
+            </div>
+          )
+        })}
       </div>
 
       <div className={`absolute top-1/2 right-0 h-50 w-50 z-20 transition-all duration-700 ease-in-out transform -translate-y-1/2 ${showRightArrow ? "opacity-100 visible" : "opacity-0 invisible"}`}>
