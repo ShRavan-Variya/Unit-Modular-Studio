@@ -211,7 +211,7 @@ export const projects = [
     mainImage: E46001,
     icon: E46Icon,
     previewImage: E46004,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 4,800 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2021\nLocation: Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Under Execution",
     category: "Industrial Design",
     subCategory: "Textile",
     images: [E46001, E46002, E46003, E46004, E46005, E46006, E46007, E46008, E46009]
@@ -235,7 +235,7 @@ export const projects = [
     mainImage: calyx002,
     icon: calyx002,
     previewImage: calyx001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 2,10,725 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2022-2023\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Pharma",
     images: [calyx001, calyx002]
@@ -283,7 +283,7 @@ export const projects = [
     mainImage: arihant002,
     icon: arihant002,
     previewImage: arihant001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 35,263 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2023-2025\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Under Construction",
     category: "Industrial Design",
     subCategory: "Chemical",
     images: [arihant001, arihant002]
@@ -295,7 +295,7 @@ export const projects = [
     mainImage: camlin002,
     icon: camlin002,
     previewImage: camlin001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 3,02,218 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2023-2024\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Chemical",
     images: [camlin001, camlin002]
@@ -307,7 +307,7 @@ export const projects = [
     mainImage: e71002,
     icon: e71002,
     previewImage: e71001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 12,884 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2021-2022\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Others",
     images: [e71001, e71002]
@@ -319,7 +319,7 @@ export const projects = [
     mainImage: jsw002,
     icon: jsw002,
     previewImage: jsw001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 1,42,083 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2020-2021\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Steel",
     images: [jsw001, jsw002]
@@ -331,7 +331,7 @@ export const projects = [
     mainImage: nimesh002,
     icon: nimesh002,
     previewImage: nimesh001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 18,406 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2021-2022\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Engineering",
     images: [nimesh001, nimesh002]
@@ -343,7 +343,7 @@ export const projects = [
     mainImage: s11002,
     icon: s11002,
     previewImage: s11001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 22,604 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2021-2022\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Pharma",
     images: [s11001, s11002]
@@ -355,7 +355,7 @@ export const projects = [
     mainImage: s38002,
     icon: s38002,
     previewImage: s38001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 45,870 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2022-2023\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Pharma",
     images: [s38001, s38002]
@@ -367,7 +367,7 @@ export const projects = [
     mainImage: s76002,
     icon: s76002,
     previewImage: s76001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 10,86,250.78 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2024-2025\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Ongoing",
     category: "Industrial Design",
     subCategory: "Steel",
     images: [s76001, s76002]
@@ -379,7 +379,7 @@ export const projects = [
     mainImage: sharp002,
     icon: sharp002,
     previewImage: sharp001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 43,873 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2021-2022\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Engineering",
     images: [sharp001, sharp002]
@@ -391,7 +391,7 @@ export const projects = [
     mainImage: tataA6002,
     icon: tataA6002,
     previewImage: tataA6001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 10,75,971.24 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2022-2023\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Steel",
     images: [tataA6001, tataA6002]
@@ -403,7 +403,7 @@ export const projects = [
     mainImage: tataF8002,
     icon: tataF8002,
     previewImage: tataF8001,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Area: 12,38,064.97 sq.ft.\u2002\u2002\u2002|\u2002\u2002\u2002Year: 2022-2023\nLocation: MIDC Tarapur, Boisar\u2002\u2002\u2002|\u2002\u2002\u2002Status: Completed",
     category: "Industrial Design",
     subCategory: "Steel",
     images: [tataF8001, tataF8002]

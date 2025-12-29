@@ -17,6 +17,7 @@ interface ProjectItemProps {
 
 const ProjectItem: FC<ProjectItemProps> = (props) => {
   const slug = props.title.replace(/\s+/g, '-').toLowerCase();
+  const isMultiline = props.description.includes('\n');
 
   return (
     <Link href={`/projects/${slug}`}>
@@ -107,8 +108,13 @@ const ProjectItem: FC<ProjectItemProps> = (props) => {
                   />
                 )}
               </div>
-              <p className="text-sm text-gray-600 text-center max-w-full mt-4">
-                {props.description}
+              <p className={`text-sm text-gray-600 max-w-full mt-4 ${isMultiline ? 'text-left' : 'text-center'}`}>
+                {props.description.split('\n').map((line, i) => (
+                  <React.Fragment key={i}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
               </p>
             </div>
           </div>
