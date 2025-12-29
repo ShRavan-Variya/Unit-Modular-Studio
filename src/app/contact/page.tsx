@@ -26,6 +26,8 @@ export default function ContactUs() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    // const sendMail = "hr@sarvagyasofttech.com";
+    const sendMail = "admin@craftspaces.in";
     const subject = encodeURIComponent("New Project Inquiry from Website");
 
     const body = encodeURIComponent(
@@ -37,7 +39,7 @@ export default function ContactUs() {
     );
 
     // ✅ Gmail compose link
-    const gmailLink = `https://mail.google.com/mail/?view=cm&to=hr@sarvagyasofttech.com&su=${subject}&body=${body}`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&to=${sendMail}&su=${subject}&body=${body}`;
 
     window.open(gmailLink, '_blank');
   };

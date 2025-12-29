@@ -139,16 +139,9 @@ import tataF8002 from '@/assets/projects/industrial/22_TATA-F8/002.jpg';
 
 // ###### OTHER PROJECTS IMPORTS ###### //
 // ## 07 VECAPS
-import VECAPS01 from '@/assets/projects/VECAPS/01.jpg';
-import VECAPS02 from '@/assets/projects/VECAPS/02.jpg';
-import VECAPS03 from '@/assets/projects/VECAPS/03.jpg';
-
-
-
-
-
-
-
+// import VECAPS01 from '@/assets/projects/VECAPS/01.jpg';
+// import VECAPS02 from '@/assets/projects/VECAPS/02.jpg';
+// import VECAPS03 from '@/assets/projects/VECAPS/03.jpg';
 
 export const projects = [
   {
@@ -158,7 +151,7 @@ export const projects = [
     mainImage: ankur001,
     icon: ankurIcon,
     previewImage: ankur002,
-    description: "A modern field house built to blend with its natural surroundings, focusing on minimalism and sustainability.",
+    description: "A modern bungalow where luxury meets functional living. Thoughtfully integrated with nature to enhance interior comfort.",
     category: "Architecture",
     subCategory: "Residential",
     images: [ankur001, ankur002, ankur003, ankur004, ankur005, ankur006, ankur007, ankur008, ankur009, ankur012, ankur013, ankur014]
@@ -170,7 +163,7 @@ export const projects = [
     mainImage: dilip001,
     icon: dilipIcon,
     previewImage: dilip003,
-    description: "A modern field house built to blend with its natural surroundings, focusing on minimalism and sustainability.",
+    description: "A climate-responsive design using local materials and traditional methods. Sustainably rooted in regional culture and environment.",
     category: "Architecture",
     subCategory: "Residential",
     images: [dilip001, dilip002, dilip003, dilip004, dilip005, dilip006]
@@ -182,7 +175,7 @@ export const projects = [
     mainImage: manjushree001,
     icon: manjushreeIcon,
     previewImage: manjushree010,
-    description: "Inspired by traditional Japanese architecture, this adobe home integrates contemporary design with classic simplicity.",
+    description: "A serene retreat nestled within Darjeeling's natural landscape. Designed for relaxation, reflection, and local charm.",
     category: "Architecture",
     subCategory: "Hospitality",
     images: [manjushree001, manjushree002, manjushree003, manjushree004, manjushree005, manjushree006, manjushree007, manjushree008, manjushree009, manjushree010, manjushree011, manjushree012, manjushree013, manjushree014, manjushree015]
@@ -194,7 +187,7 @@ export const projects = [
     mainImage: RH14001,
     icon: RH14Icon,
     previewImage: RH14002,
-    description: "A modern field house built to blend with its natural surroundings, focusing on minimalism and sustainability.",
+    description: "Eco-friendly homes designed to minimize environmental impact. Well-planned spaces with natural light and ventilation.",
     category: "Architecture",
     subCategory: "Residential",
     images: [RH14001, RH14002, RH14003, RH14004, RH14005, RH14006, RH14007, RH14008, RH14009, RH14010]
@@ -206,7 +199,7 @@ export const projects = [
     mainImage: tvm001,
     icon: tvmIcon,
     previewImage: tvm010,
-    description: "Inspired by traditional Japanese architecture, this adobe home integrates contemporary design with classic simplicity.",
+    description: "A secure yet open institutional space with experiential design. Dynamic forms create engaging and interactive environments.",
     category: "Architecture",
     subCategory: "Institutional",
     images: [tvm001, tvm002, tvm003, tvm004, tvm005, tvm006, tvm007, tvm008, tvm009, tvm010, tvm011, tvm012]
@@ -220,21 +213,21 @@ export const projects = [
     previewImage: E46004,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "textile",
+    subCategory: "Textile",
     images: [E46001, E46002, E46003, E46004, E46005, E46006, E46007, E46008, E46009]
   },
-  {
-    id: 7,
-    title: "VECAP",
-    subtitle: "Industrial Design",
-    mainImage: VECAPS01,
-    icon: VECAPS02,
-    previewImage: VECAPS03,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
-    category: "Industrial Design",
-    subCategory: "pharma",
-    images: [VECAPS01, VECAPS02, VECAPS03]
-  },
+  // {
+  //   id: 7,
+  //   title: "VECAP",
+  //   subtitle: "Industrial Design",
+  //   mainImage: VECAPS01,
+  //   icon: VECAPS02,
+  //   previewImage: VECAPS03,
+  //   description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+  //   category: "Industrial Design",
+  //   subCategory: "Pharma",
+  //   images: [VECAPS01, VECAPS02, VECAPS03]
+  // },
   {
     id: 8,
     title: "CALYX",
@@ -244,7 +237,7 @@ export const projects = [
     previewImage: calyx001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Pharma",
     images: [calyx001, calyx002]
   },
   {
@@ -254,9 +247,9 @@ export const projects = [
     mainImage: primma001,
     icon: primmaIcon,
     previewImage: primma003,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "A modern hotel defined by exposed brick architecture. Acoustic façades add texture, character, and charm.",
     category: "Architecture",
-    subCategory: "pharma",
+    subCategory: "Hospitality",
     images: [primma001, primma002, primma003, primma004]
   },
   {
@@ -266,9 +259,9 @@ export const projects = [
     mainImage: cidco001,
     icon: cidcoIcon,
     previewImage: cidco003,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Triangular planning creates dynamic forms and accentuated spaces. Balconies and terraces enhance everyday living.",
     category: "Architecture",
-    subCategory: "pharma",
+    subCategory: "Residential",
     images: [cidco001, cidco002, cidco003, cidco004, cidco005, cidco006, cidco007]
   },
   {
@@ -278,9 +271,9 @@ export const projects = [
     mainImage: waves001,
     icon: wavesIcon,
     previewImage: waves003,
-    description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
+    description: "Coastal-inspired row houses with wave-like forms. Designed for privacy, community, and visual harmony.",
     category: "Architecture",
-    subCategory: "pharma",
+    subCategory: "Residential",
     images: [waves001, waves002, waves003, waves004, waves005, waves006]
   },
   {
@@ -292,7 +285,7 @@ export const projects = [
     previewImage: arihant001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Chemical",
     images: [arihant001, arihant002]
   },
   {
@@ -304,7 +297,7 @@ export const projects = [
     previewImage: camlin001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Chemical",
     images: [camlin001, camlin002]
   },
   {
@@ -316,7 +309,7 @@ export const projects = [
     previewImage: e71001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Others",
     images: [e71001, e71002]
   },
   {
@@ -328,7 +321,7 @@ export const projects = [
     previewImage: jsw001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Steel",
     images: [jsw001, jsw002]
   },
   {
@@ -340,7 +333,7 @@ export const projects = [
     previewImage: nimesh001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Engineering",
     images: [nimesh001, nimesh002]
   },
   {
@@ -352,7 +345,7 @@ export const projects = [
     previewImage: s11001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Pharma",
     images: [s11001, s11002]
   },
   {
@@ -364,7 +357,7 @@ export const projects = [
     previewImage: s38001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Pharma",
     images: [s38001, s38002]
   },
   {
@@ -376,7 +369,7 @@ export const projects = [
     previewImage: s76001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Steel",
     images: [s76001, s76002]
   },
   {
@@ -388,7 +381,7 @@ export const projects = [
     previewImage: sharp001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Engineering",
     images: [sharp001, sharp002]
   },
   {
@@ -400,7 +393,7 @@ export const projects = [
     previewImage: tataA6001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Steel",
     images: [tataA6001, tataA6002]
   },
   {
@@ -412,7 +405,7 @@ export const projects = [
     previewImage: tataF8001,
     description: "Designed to maximize ventilation while maintaining visual interest, the home represents a solution to counteract monotony.",
     category: "Industrial Design",
-    subCategory: "pharma",
+    subCategory: "Steel",
     images: [tataF8001, tataF8002]
   }
 ];
